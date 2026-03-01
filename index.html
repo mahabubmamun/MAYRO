@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAYRO — Own The Moment</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="loader-logo">MAYRO</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="navbar" class="navbar">
+    <nav class="nav-container">
+      <div class="nav-logo">
+        <a href="#hero">MAYRO</a>
+        <span class="logo-sub">PARFUMS</span>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#new-in" class="nav-link">New In</a></li>
+        <li class="dropdown">
+          <a href="#collection" class="nav-link dropdown-toggle">Collection <span class="arrow">&#8964;</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#collection" data-filter="All">All</a></li>
+            <li><a href="#collection" data-filter="Men">Men</a></li>
+            <li><a href="#collection" data-filter="Women">Women</a></li>
+            <li><a href="#collection" data-filter="Unisex">Unisex</a></li>
+            <li><a href="#gift-sets" data-filter="Gift">Gift Set</a></li>
+          </ul>
+        </li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Premium Fragrances · Dhaka</p>
+      <h1 class="hero-title">Luxury<br /><em>Within Reach</em></h1>
+      <p class="hero-subtitle">Discover rare oud-based perfumes and modern Western accords, curated for the discerning Bangladeshi.</p>
+      <div class="hero-cta">
+        <a href="#collection" class="btn-gold">Shop Now</a>
+        <a href="#new-in" class="btn-ghost">New Arrivals</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===================== NEW IN ===================== -->
+  <section id="new-in" class="section new-in-section">
+    <div class="section-header">
+      <p class="section-label">Just Arrived</p>
+      <h2 class="section-title">New In</h2>
+      <div class="title-ornament"></div>
+    </div>
+    <div class="new-in-grid" id="newInGrid">
+      <!-- Rendered by JS -->
+    </div>
+  </section>
+
+  <!-- ===================== MARQUEE ===================== -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Oud Royal &bull;</span>
+      <span>Rose D'Orient &bull;</span>
+      <span>Night Noir &bull;</span>
+      <span>Amber Essence &bull;</span>
+      <span>Velvet Musk &bull;</span>
+      <span>Silk & Saffron &bull;</span>
+      <span>Oud Royal &bull;</span>
+      <span>Rose D'Orient &bull;</span>
+      <span>Night Noir &bull;</span>
+      <span>Amber Essence &bull;</span>
+      <span>Velvet Musk &bull;</span>
+      <span>Silk & Saffron &bull;</span>
+    </div>
+  </div>
+
+  <!-- ===================== COLLECTION ===================== -->
+  <section id="collection" class="section collection-section">
+    <div class="section-header">
+      <p class="section-label">Our Fragrances</p>
+      <h2 class="section-title">Collection</h2>
+      <div class="title-ornament"></div>
+    </div>
+
+    <div class="collection-layout">
+      <!-- Sidebar Filter -->
+      <aside class="filter-sidebar" id="filterSidebar">
+        <div class="filter-header">
+          <h3>Filter</h3>
+          <button id="clearFilters" class="clear-btn">Clear All</button>
+        </div>
+
+        <div class="filter-group">
+          <h4>Category</h4>
+          <label class="checkbox-label"><input type="checkbox" name="category" value="Men" /> Men</label>
+          <label class="checkbox-label"><input type="checkbox" name="category" value="Women" /> Women</label>
+          <label class="checkbox-label"><input type="checkbox" name="category" value="Unisex" /> Unisex</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>Size</h4>
+          <label class="checkbox-label"><input type="checkbox" name="size" value="30ml" /> 30ml</label>
+          <label class="checkbox-label"><input type="checkbox" name="size" value="50ml" /> 50ml</label>
+          <label class="checkbox-label"><input type="checkbox" name="size" value="100ml" /> 100ml</label>
+        </div>
+
+        <div class="filter-group">
+          <h4>Price Range</h4>
+          <div class="price-range">
+            <input type="range" id="priceRange" min="500" max="5000" value="5000" step="100" />
+            <div class="price-labels">
+              <span>৳500</span>
+              <span id="priceValue">৳5000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h4>Sort By</h4>
+          <select id="sortSelect" class="sort-select">
+            <option value="default">Default</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="newest">Newest</option>
+          </select>
+        </div>
+
+        <button class="filter-toggle-mobile" id="filterToggleMobile">&#9776; Filters</button>
+      </aside>
+
+      <!-- Product Grid -->
+      <div class="products-area">
+        <div class="products-topbar">
+          <span id="productCount">Showing 8 products</span>
+          <button class="filter-toggle-mobile-btn" id="filterToggleBtn">&#9776; Filter</button>
+        </div>
+        <div class="product-grid" id="productGrid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GIFT SETS ===================== -->
+  <section id="gift-sets" class="section gift-section">
+    <div class="section-header">
+      <p class="section-label">Special Edition</p>
+      <h2 class="section-title">Gift Sets</h2>
+      <div class="title-ornament"></div>
+      <p class="section-desc">Thoughtfully curated. Perfectly gifted.</p>
+    </div>
+    <div class="gift-grid">
+      <!-- Duo -->
+      <div class="gift-card">
+        <div class="gift-badge">Best for Eid</div>
+        <div class="gift-img gift-img-duo">
+          <div class="gift-bottles">
+            <div class="bottle bottle-1"></div>
+            <div class="bottle bottle-2"></div>
+          </div>
+        </div>
+        <div class="gift-info">
+          <h3>Duo Luxe Set</h3>
+          <p>2 signature fragrances in a premium gift box</p>
+          <div class="gift-price">
+            <span class="old-price">৳2,598</span>
+            <span class="new-price">৳1,999</span>
+          </div>
+          <button class="btn-gold" onclick="addGiftToCart({id:'g1', name:'Duo Luxe Set', price:1999, qty:1})">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Trio -->
+      <div class="gift-card gift-card-featured">
+        <div class="gift-badge">Wedding Gift</div>
+        <div class="gift-img gift-img-trio">
+          <div class="gift-bottles">
+            <div class="bottle bottle-1"></div>
+            <div class="bottle bottle-2"></div>
+            <div class="bottle bottle-3"></div>
+          </div>
+        </div>
+        <div class="gift-info">
+          <h3>Trio Premium Box</h3>
+          <p>3 exclusive perfumes in a luxury velvet gift box</p>
+          <div class="gift-price">
+            <span class="old-price">৳3,897</span>
+            <span class="new-price">৳2,799</span>
+          </div>
+          <button class="btn-gold" onclick="addGiftToCart({id:'g2', name:'Trio Premium Box', price:2799, qty:1})">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="section about-section">
+    <div class="about-content">
+      <div class="about-text">
+        <p class="section-label">Our Story</p>
+        <h2 class="section-title">Crafted for the<br /><em>Refined Soul</em></h2>
+        <p>AURUM Parfums was born from a belief that world-class fragrances should be accessible to every Bangladeshi who appreciates the finer things in life. We source the finest oud from the Middle East, rose from Bulgaria, and blend them in our Dhaka atelier.</p>
+        <p>Each bottle is a celebration of heritage, craftsmanship, and modern elegance — made to be worn, gifted, and remembered.</p>
+        <a href="#collection" class="btn-gold">Explore Collection</a>
+      </div>
+      <div class="about-visual">
+        <div class="about-ornament"></div>
+        <div class="about-stats">
+          <div class="stat"><span class="stat-num">8+</span><span>Years of Craft</span></div>
+          <div class="stat"><span class="stat-num">40+</span><span>Unique Fragrances</span></div>
+          <div class="stat"><span class="stat-num">50K+</span><span>Happy Customers</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="section contact-section">
+    <div class="section-header">
+      <p class="section-label">Reach Us</p>
+      <h2 class="section-title">Contact</h2>
+      <div class="title-ornament"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon">&#9742;</span>
+          <div><strong>Phone</strong><p>+880 1700 000000</p></div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">&#9993;</span>
+          <div><strong>Email</strong><p>hello@aurumparfums.bd</p></div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">&#9679;</span>
+          <div><strong>Address</strong><p>Gulshan-2, Dhaka 1212</p></div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit" class="btn-gold">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">AURUM<span>PARFUMS</span></div>
+      <p class="footer-tagline">Luxury Within Reach — Dhaka, Bangladesh</p>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#collection">Collection</a>
+        <a href="#gift-sets">Gift Sets</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 AURUM Parfums. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== CART MODAL ===================== -->
+  <div class="modal-overlay" id="cartModal">
+    <div class="modal cart-modal">
+      <div class="modal-header">
+        <h2>Your Cart</h2>
+        <button class="modal-close" id="cartClose">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="cart-footer" id="cartFooter">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== CHECKOUT MODAL ===================== -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal checkout-modal">
+      <div class="modal-header">
+        <h2>Checkout</h2>
+        <button class="modal-close" id="checkoutClose">&times;</button>
+      </div>
+      <form id="checkoutForm">
+        <div class="form-section">
+          <h3>Customer Information</h3>
+          <div class="form-row">
+            <input type="text" id="fullName" placeholder="Full Name" required />
+            <input type="tel" id="phone" placeholder="Phone Number" required />
+          </div>
+          <input type="text" id="address" placeholder="Full Address" required />
+          <input type="text" id="city" placeholder="City" required />
+        </div>
+
+        <div class="form-section">
+          <h3>Payment Method</h3>
+          <div class="payment-options">
+            <label class="payment-option">
+              <input type="radio" name="payment" value="bKash" required />
+              <span class="payment-label bkash">bKash</span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="Nagad" />
+              <span class="payment-label nagad">Nagad</span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="Rocket" />
+              <span class="payment-label rocket">Rocket</span>
+            </label>
+            <label class="payment-option">
+              <input type="radio" name="payment" value="Card" />
+              <span class="payment-label card">Credit/Debit Card</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="order-summary" id="orderSummary">
+          <!-- Rendered by JS -->
+        </div>
+
+        <button type="submit" class="btn-gold btn-full">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================== SUCCESS MODAL ===================== -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal success-modal">
+      <div class="success-icon">✓</div>
+      <h2>Order Placed!</h2>
+      <p>Thank you for your order. We'll contact you shortly to confirm delivery.</p>
+      <p class="order-id" id="orderId"></p>
+      <button class="btn-gold" id="successClose">Continue Shopping</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
